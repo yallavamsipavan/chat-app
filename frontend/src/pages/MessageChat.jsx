@@ -1,0 +1,86 @@
+import React, { useEffect, useRef, useState } from "react";
+import { io } from "socket.io-client";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import './MessageChat.css';
+
+const socket = io("http://localhost:5000");
+
+const MessageChat = () => {
+    const location = useLocation();
+    const { fromid, toid, toname } = location.state;
+    const [messages, setMessages] = useState([]);
+    const [message, setMessage] = useState('');
+    const messagesEndRef = useRef(null);
+
+    useEffect(() => {
+        const fetchMessages = async () => {
+            try {
+                const response = await axios.post('http://localhost:5000/api/chats/history', { fromid, toid });
+                setMessages(response.data);
+            } catch (err) {
+                console.error(`Message fetching error: ${err}`);
+            }
+        };
+        fetchMessages();
+
+        socket.on("receive_message", (data) => {
+            const isRelevant = 
+                (data.fromid === fromid && data.toid === toid) || 
+                (data.fromid === toid && data.toid === fromid);
+            if (isRelevant) {
+                setMessages(prev => [...prev, data]);
+            }
+        });
+
+        return () => {
+            socket.off("receive_message");
+        };
+    }, [fromid, toid]);
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [messages]);
+
+    const sendMessage = () => {
+        if (message.trim() === '') return alert('Empty message');
+        socket.emit("send_message", { fromid, toid, message });
+        setMessage('');
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') sendMessage();
+    };
+
+    return (
+        <div className="main-class">
+            <h1>{toname}</h1>
+            <div className="messages">
+                {messages.length === 0 ? (
+                    <div className="placeholder">No messages yet</div>
+                ) : (
+                    messages.map((msg, index) => (
+                        <div
+                            key={index}
+                            className={`message ${msg.fromid === fromid ? 'sent' : 'recieved'}`}>
+                            {msg.message}
+                        </div>
+                    ))
+                )}
+                <div ref={messagesEndRef} />
+            </div>
+            <div>
+                <input 
+                    placeholder="Message..." 
+                    type="text" 
+                    value={message} 
+                    onChange={e => setMessage(e.target.value)} 
+                    onKeyDown={handleKeyDown}
+                />
+                <button onClick={sendMessage}>Send</button>
+            </div>
+        </div>
+    );
+};
+
+export default MessageChat;
