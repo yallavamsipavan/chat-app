@@ -13,6 +13,8 @@ const EditProfile = () => {
         try {
             const res = await axios.post('http://localhost:5000/api/users/update-profile', { id, username, userid });
             localStorage.setItem('user', JSON.stringify(res.data));
+            localStorage.setItem('userUserid', userid);
+            localStorage.setItem('userUsername', username);
             navigate('/profile');
         } catch (err) {
             console.error(err);

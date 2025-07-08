@@ -1,0 +1,91 @@
+@import url('./rootcss.css');
+
+.login-complete {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--outside-bgcolor);
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.complete {
+    background-color: var(--main-bgcolor);
+    padding: 3rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--main-shadow);
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 0.6 ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input {
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--input-border-color);
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--input-border-color-focus);
+    box-shadow: 0 0 0 3px var(--input-box-shadow-focus);
+}
+
+button {
+    background: var(--button-bgcolor);
+    color: var(--button-text-color);
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--button-bgcolor-hover);
+}
+
+p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--p-text-color);
+    cursor: pointer;
+    transition: color 0.3;
+}
+
+p:hover {
+    color: var(--p-text-color-hover);
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .complete {
+        padding: 2rem 1.5rem;
+        border-radius: 10px;
+    }
+    input, button {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,23 @@
+* {
+    --outside-bgcolor: #aed9f5;
+    --main-bgcolor: #e4edf6;
+    --main-shadow: 0px 0px 10px rgb(60, 72, 84);
+    --input-border-color: #ccc;
+    --input-border-color-focus: #2f80ed;
+    --input-box-shadow-focus: rgba(47, 128, 237, 0.2);
+    --button-bgcolor: #2f80ed;
+    --button-text-color: white;
+    --button-bgcolor-hover: #1c63d5;
+    --p-text-color: #555;
+    --p-text-color-hover: #2f80ed;
+    --border-bottom-color: #eee;
+    --my-userid-color: #333;
+    --span-color: #444;
+    --message-button-bgcolor: #27ae60;
+    --message-button-text-color: white;
+    --message-button-bgcolor-hover: #219150;
+    --label-text-color: #333;
+    --profile-button-bgcolor: #007bff;
+    --profile-button-text-color: white;
+    --profile-button-bgcolor-hover: #0056b3;
+}

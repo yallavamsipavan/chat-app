@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import './Register.css'
 
 const Register = () => {
     const[username, setUsername] = useState('');
@@ -21,14 +22,18 @@ const Register = () => {
     };
 
     return (
-        <form onSubmit={handleRegister}>
-            <input placeholder="Username" onChange={e => setUsername(e.target.value)} required />
-            <input placeholder="User ID" onChange={e => setUserid(e.target.value)} required />
-            <input placeholder="Password" onChange={e => setPassword(e.target.value)} required />
-            <input placeholder="Confirm Password" onChange={e => setConfirmPassword(e.target.value)} required />
-            <button type="submit">Register</button>
-            <p onClick={() => navigate('/')}>Already have an account? Login</p>
-        </form>
+        <div className="register-complete">
+            <div className="complete">
+            <form onSubmit={handleRegister}>
+                <input placeholder="Username" onChange={e => setUsername(e.target.value)} required />
+                <input placeholder="User ID" onChange={e => setUserid(e.target.value)} required />
+                <input placeholder="Password" onChange={e => setPassword(e.target.value)} required />
+                <input placeholder="Confirm Password" onChange={e => setConfirmPassword(e.target.value)} required />
+                <button type="submit">Register</button>
+                <p onClick={() => navigate('/')}>Already have an account? Login</p>
+            </form>
+            </div>
+        </div>
     )
 };
 export default Register;

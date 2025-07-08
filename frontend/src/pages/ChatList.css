@@ -1,0 +1,87 @@
+@import url('./rootcss.css');
+
+.chatlist-complete {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--outside-bgcolor);
+    margin: 0px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.chatlist-main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bgcolor);
+    border-radius: 12px;
+    box-shadow: var(--main-shadow);
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.chatlist-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-bottom-color);
+    padding-bottom: 15px;
+}
+
+.chatlist-top h1 {
+    font-size: 22px;
+    color: var(--my-userid-color);
+    margin: 0px;
+}
+
+.chatlist-top button {
+    background-color: var(--button-bgcolor);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.chatlist-top button:hover {
+    background-color: var(--button-bgcolor-hover);
+}
+
+.users-list {
+    margin-top: 20px;
+}
+
+.users-list div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0px;
+    border-bottom: 1px solid var(--border-bottom-color);
+}
+
+.users-list span {
+    font-size: 16px;
+    color: var(--span-color);
+    flex-grow: 1;
+}
+
+.users-list button {
+    background-color: var(--message-button-bgcolor);
+    color: var(--message-button-text-color);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.users-list button:hover {
+    background-color: var(--message-button-bgcolor-hover);
+}
