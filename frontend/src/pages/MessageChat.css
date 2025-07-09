@@ -1,34 +1,98 @@
-.main-class {
+@import url('./rootcss.css');
+
+.messagechat-complete {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--outside-bgcolor);
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.messagechat-main {
+    background-color: var(--chat-bgcolor);
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--main-shadow);
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    align-items: center;
+}
+
+.messagechat-main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--chat-friendname-text-color);
 }
 
 .messages {
-    width: 300px;
-    height: 500px;
-    box-shadow: 0px 0px 10px #444;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    overflow-y: auto;
-    scroll-behavior: smooth;
+    gap: 10px;
+    padding-right: 5px;
+    background-color: var(--chat-chatboard-bgcolor);
+    padding: 10px 10px 4px 10px; /* top right bottom right */
+    border-radius: 20px;
 }
 
-.message.sent {
-    color: white;
+.message {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-break: break-word;
+    font-size: 16px;
+}
+
+.sent {
     align-self: flex-end;
-    width: fit-content;
-    margin-bottom: 1px;
-    padding: 3px 6px;
-    background-color: rgb(239, 33, 33);
+    background-color: var(--chat-sent-messages-bgcolor);
+    color: var(--chat-sent-messages-text-color);
 }
 
-.message.recieved {
-    color: white;
-    width: fit-content;
-    margin-bottom: 1px;
-    padding: 3px 6px;
-    background-color: rgb(11, 116, 253);
+.recieved {
+    align-self: flex-start;
+    background-color: var(--chat-recieved-messages-bgcolor);
+    color: var(--chat-recieved-messages-text-color);
+}
+
+.placeholder {
+    text-align: center;
+    color: var(--chat-placeholder-text-color);
+    font-style: italic;
+}
+
+.messagechat-down {
+    display: flex;
+}
+
+.messagechat-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--chat-input-border-color);
+    outline: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.messagechat-button {
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    background-color: var(--chat-button-bgcolor);
+    color: var(--chat-button-text-color);
+    border: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--chat-bgcolor-hover);
 }

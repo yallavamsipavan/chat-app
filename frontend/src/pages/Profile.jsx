@@ -16,6 +16,7 @@ const Profile = () => {
     return (
         <div className="profile-complete">
             <div className="profile-main">
+                <img className="profile-image" src={require('../assets/defaultImage.jpg')} alt="" />
                 <label>Name : {user.username}</label>
                 <label>ID   : {user.userid}</label>
                 <button onClick={() => navigate('/edit-profile', { state: {id: user.id, prevUserid: user.userid, prevUsername: user.username} })}>Edit</button>

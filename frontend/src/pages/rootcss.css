@@ -20,4 +20,16 @@
     --profile-button-bgcolor: #007bff;
     --profile-button-text-color: white;
     --profile-button-bgcolor-hover: #0056b3;
+    --chat-chatboard-bgcolor: #a1d8ef;
+    --chat-bgcolor: white;
+    --chat-friendname-text-color: #333;
+    --chat-sent-messages-bgcolor: #dcf8c6;
+    --chat-sent-messages-text-color: #333;
+    --chat-recieved-messages-bgcolor: #e6e6e6;
+    --chat-recieved-messages-text-color: #333;
+    --chat-placeholder-text-color: #999;
+    --chat-input-border-color: #ccc;
+    --chat-button-bgcolor: #007bff;
+    --chat-button-text-color: white;
+    --chat-bgcolor-hover: #0056b3;
 }

@@ -31,13 +31,13 @@
     }
 }
 
-form {
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
 
-input {
+.login-input {
     padding: 0.9rem 1rem;
     border-radius: 8px;
     border: 1px solid var(--input-border-color);
@@ -45,13 +45,13 @@ input {
     transition: border 0.3s, box-shadow 0.3s;
 }
 
-input:focus {
+.login-input:focus {
     outline: none;
     border-color: var(--input-border-color-focus);
     box-shadow: 0 0 0 3px var(--input-box-shadow-focus);
 }
 
-button {
+.login-button {
     background: var(--button-bgcolor);
     color: var(--button-text-color);
     padding: 0.9rem 1rem;
@@ -63,11 +63,11 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+.login-button:hover {
     background: var(--button-bgcolor-hover);
 }
 
-p {
+.login-p {
     text-align: center;
     font-size: 0.95rem;
     color: var(--p-text-color);
@@ -75,7 +75,7 @@ p {
     transition: color 0.3;
 }
 
-p:hover {
+.lohin-p:hover {
     color: var(--p-text-color-hover);
     text-decoration: underline;
 }

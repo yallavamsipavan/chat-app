@@ -53,31 +53,34 @@ const MessageChat = () => {
     };
 
     return (
-        <div className="main-class">
-            <h1>{toname}</h1>
-            <div className="messages">
-                {messages.length === 0 ? (
-                    <div className="placeholder">No messages yet</div>
-                ) : (
-                    messages.map((msg, index) => (
-                        <div
-                            key={index}
-                            className={`message ${msg.fromid === fromid ? 'sent' : 'recieved'}`}>
-                            {msg.message}
-                        </div>
-                    ))
-                )}
-                <div ref={messagesEndRef} />
-            </div>
-            <div>
-                <input 
-                    placeholder="Message..." 
-                    type="text" 
-                    value={message} 
-                    onChange={e => setMessage(e.target.value)} 
-                    onKeyDown={handleKeyDown}
-                />
-                <button onClick={sendMessage}>Send</button>
+        <div className="messagechat-complete">
+            <div className="messagechat-main">
+                <h1>{toname}</h1>
+                <div className="messages">
+                    {messages.length === 0 ? (
+                        <div className="placeholder">No messages yet</div>
+                    ) : (
+                        messages.map((msg, index) => (
+                            <div
+                                key={index}
+                                className={`message ${msg.fromid === fromid ? 'sent' : 'recieved'}`}>
+                                {msg.message}
+                            </div>
+                        ))
+                    )}
+                    <div ref={messagesEndRef} />
+                </div>
+                <div className="messagechat-down">
+                    <input 
+                        className="messagechat-input"
+                        placeholder="Message..." 
+                        type="text" 
+                        value={message} 
+                        onChange={e => setMessage(e.target.value)} 
+                        onKeyDown={handleKeyDown}
+                    />
+                    <button className="messagechat-button" onClick={sendMessage}>Send</button>
+                </div>
             </div>
         </div>
     );
