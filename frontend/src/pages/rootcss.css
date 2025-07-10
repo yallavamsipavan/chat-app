@@ -1,10 +1,13 @@
 * {
     --outside-bgcolor: #aed9f5;
+    --select-text-color: white;
+    --select-bgcolor: #45a0f6;
     --main-bgcolor: #e4edf6;
     --main-shadow: 0px 0px 10px rgb(60, 72, 84);
     --input-border-color: #ccc;
     --input-border-color-focus: #2f80ed;
     --input-box-shadow-focus: rgba(47, 128, 237, 0.2);
+    --input-text-color: #333;
     --button-bgcolor: #2f80ed;
     --button-text-color: white;
     --button-bgcolor-hover: #1c63d5;
@@ -20,6 +23,7 @@
     --profile-button-bgcolor: #007bff;
     --profile-button-text-color: white;
     --profile-button-bgcolor-hover: #0056b3;
+    --profile-lable-text-color: #333;
     --chat-chatboard-bgcolor: #a1d8ef;
     --chat-bgcolor: white;
     --chat-friendname-text-color: #333;
@@ -32,4 +36,11 @@
     --chat-button-bgcolor: #007bff;
     --chat-button-text-color: white;
     --chat-bgcolor-hover: #0056b3;
+    --editprofile-border-color: #ccc;
+    --editprofile-border-color-focus: #4a90e2;
+}
+
+::selection {
+    color: var(--select-text-color);
+    background-color: var(--select-bgcolor);
 }

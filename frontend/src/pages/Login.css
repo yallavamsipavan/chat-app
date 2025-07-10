@@ -43,6 +43,7 @@
     border: 1px solid var(--input-border-color);
     font-size: 1rem;
     transition: border 0.3s, box-shadow 0.3s;
+    color: var(--input-text-color);
 }
 
 .login-input:focus {

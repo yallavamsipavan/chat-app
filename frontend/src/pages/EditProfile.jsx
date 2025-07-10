@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import './EditProfile.css';
 
 const EditProfile = () => {
     const location = useLocation();
@@ -23,10 +24,18 @@ const EditProfile = () => {
     };
 
     return (
-        <div>
-            <label>Name : <input type="text" value={username} onChange={e => setUsername(e.target.value)} /></label>
-            <label>ID   : <input type="text" value={userid} onChange={e => setUserid(e.target.value)} /></label>
-            <button onClick={updateUserDetails}>Update</button>
+        <div className="editprofile-complete">
+            <div className="editprofile-main">
+                <div className="editprofile-label-input">
+                    <label className="editprofile-label">Username</label>
+                    <input className="editprofile-input" placeholder="Username..." type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                </div>
+                <div className="editprofile-label-input">
+                    <label className="editprofile-label">User ID</label>
+                    <input className="editprofile-input" placeholder="Userid..." type="text" value={userid} onChange={e => setUserid(e.target.value)} />
+                </div>
+                <button className="editprofile-button" onClick={updateUserDetails}>Update</button>
+            </div>
         </div>
     );
 };

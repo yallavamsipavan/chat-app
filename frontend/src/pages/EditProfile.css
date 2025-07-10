@@ -1,0 +1,64 @@
+@import url('./rootcss.css');
+
+.editprofile-complete {
+    background-color: var(--outside-bgcolor);
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+}
+
+.editprofile-main {
+    background-color: var(--main-bgcolor);
+    box-shadow: var(--main-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: left;
+    min-width: 300px;
+}
+
+.editprofile-label-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.editprofile-label {
+    margin-left: 20px;
+    font-weight: bold;
+    color: var(--profile-lable-text-color);
+}
+
+.editprofile-input {
+    padding: 12px 15px; /* top right down left */
+    margin: 5px 10px 20px 5px;
+    border: 1px solid var(--editprofile-border-color);
+    color: var(--input-text-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.editprofile-input:focus {
+    border-color: var(--editprofile-border-color-focus);
+}
+
+.editprofile-main button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--profile-button-bgcolor);
+    color: var(--profile-button-text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.editprofile-main button:hover {
+    background-color: var(--profile-button-bgcolor-hover);
+}
