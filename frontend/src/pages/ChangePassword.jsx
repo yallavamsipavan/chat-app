@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import './ChangePassword.css';
 
 const ChangePassword = () => {
     const [password, setPassword] = useState('');
@@ -18,11 +19,19 @@ const ChangePassword = () => {
     };
 
     return (
-        <div>
-            <h2>Reset Password</h2>
-            <input type="password" placeholder="New Password" onChange={e => setPassword(e.target.value)} />
-            <input type="password" placeholder="Confirm Password" onChange={e => setConfirm(e.target.value)} />
-            <button onClick={ChangePassword}>Submit</button>
+        <div className="changepassword-complete">
+            <div className="changepassword-main">
+                <h2>Reset Password</h2>
+                <div className="changepassword-label-input">
+                    <label className="changepassword-label">New Password</label>
+                    <input className="changepassword-input" type="password" placeholder="New Password" onChange={e => setPassword(e.target.value)} />
+                </div>
+                <div className="changepassword-label-input">
+                    <label className="changepassword-label">Confirm Password</label>
+                    <input className="changepassword-input" type="password" placeholder="Confirm Password" onChange={e => setConfirm(e.target.value)} />
+                </div>
+                <button className="changepassword-button" onClick={ChangePassword}>Submit</button>
+            </div>
         </div>
     );
 };
