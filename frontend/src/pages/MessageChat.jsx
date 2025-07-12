@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import './MessageChat.css';
+import { FaArrowLeft } from "react-icons/fa";
 
 const socket = io("http://localhost:5000");
 
@@ -12,6 +13,7 @@ const MessageChat = () => {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
     const messagesEndRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchMessages = async () => {
@@ -55,7 +57,16 @@ const MessageChat = () => {
     return (
         <div className="messagechat-complete">
             <div className="messagechat-main">
-                <h1>{toname}</h1>
+                <div className="messagechat-top">
+                    <button onClick={() => navigate(-1)}
+                            style={{
+                                background: 'none',
+                                border: 'none'
+                            }}>
+                        <FaArrowLeft size={24} color="#333" />
+                    </button>
+                    <h1>{toname}</h1>
+                </div>
                 <div className="messages">
                     {messages.length === 0 ? (
                         <div className="placeholder">No messages yet</div>

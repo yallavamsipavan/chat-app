@@ -16,7 +16,8 @@ const EditProfile = () => {
             localStorage.setItem('user', JSON.stringify(res.data));
             localStorage.setItem('userUserid', userid);
             localStorage.setItem('userUsername', username);
-            navigate('/profile');
+            // navigate('/profile');
+            navigate(-1);
         } catch (err) {
             console.error(err);
             alert('Update failed');
