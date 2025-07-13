@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import './EditProfile.css';
 
 const EditProfile = () => {
@@ -27,6 +28,9 @@ const EditProfile = () => {
     return (
         <div className="editprofile-complete">
             <div className="editprofile-main">
+                <button onClick={() => navigate(-1)} style={{ background: 'none', border: 'none', alignSelf: 'flex-start'}}>
+                    <FaArrowLeft size={24} color="#333" />
+                </button>
                 <div className="editprofile-label-input">
                     <label className="editprofile-label">Username</label>
                     <input className="editprofile-input" placeholder="Username..." type="text" value={username} onChange={e => setUsername(e.target.value)} />

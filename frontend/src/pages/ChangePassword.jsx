@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import './ChangePassword.css';
 
 const ChangePassword = () => {
@@ -22,7 +23,12 @@ const ChangePassword = () => {
     return (
         <div className="changepassword-complete">
             <div className="changepassword-main">
-                <h2>Reset Password</h2>
+                <h2 style={{ display: 'flex', flexDirection: 'column' }}>
+                    <button onClick={() => navigate(-1)} style={{ background: 'none', border: 'none', alignSelf: 'start', padding: '0px' }}>
+                        <FaArrowLeft size={24} color="#333" />
+                    </button>
+                    Reset Password
+                </h2>
                 <div className="changepassword-label-input">
                     <label className="changepassword-label">New Password</label>
                     <input className="changepassword-input" type="password" placeholder="New Password" onChange={e => setPassword(e.target.value)} />

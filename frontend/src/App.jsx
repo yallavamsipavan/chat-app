@@ -8,6 +8,7 @@ import ChangePassword from './pages/ChangePassword';
 import ChatList from "./pages/ChatList";
 import MessageChat from "./pages/MessageChat";
 import EditProfile from "./pages/EditProfile";
+import FriendProfile from "./pages/FriendProfile";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/change-password" element={<ChangePassword />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/message-chat" element={<MessageChat />} />
+        <Route path="/friend-profile" element={<FriendProfile />} />
       </Routes>
     </BrowserRouter>
   );

@@ -9,7 +9,7 @@ const socket = io("http://localhost:5000");
 
 const MessageChat = () => {
     const location = useLocation();
-    const { fromid, toid, toname } = location.state;
+    const { fromid, toid, touserid, toname } = location.state;
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
     const messagesEndRef = useRef(null);
@@ -65,7 +65,14 @@ const MessageChat = () => {
                             }}>
                         <FaArrowLeft size={24} color="#333" />
                     </button>
-                    <h1>{toname}</h1>
+                    <h1 onClick={() => {navigate('/friend-profile', {
+                        state: {
+                            myid: fromid,
+                            friendid: toid,
+                            frienduserid: touserid,
+                            friendname: toname
+                        }
+                    })}}>{toname}</h1>
                 </div>
                 <div className="messages">
                     {messages.length === 0 ? (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import './Profile.css';
 
 const Profile = () => {
@@ -16,6 +17,9 @@ const Profile = () => {
     return (
         <div className="profile-complete">
             <div className="profile-main">
+                <button onClick={() => navigate(-1)} style={{ background: 'none', border: 'none', alignSelf: "flex-start" }}>
+                    <FaArrowLeft size={24} color="#333" />
+                </button>
                 <img className="profile-image" src={require('../assets/defaultImage.jpg')} alt="" />
                 <label>Name : {user.username}</label>
                 <label>ID   : {user.userid}</label>

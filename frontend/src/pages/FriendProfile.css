@@ -1,0 +1,56 @@
+@import url('./rootcss.css');
+
+.friendprofile-complete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--outside-bgcolor);
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.friendprofile-main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bgcolor);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: var(--main-shadow);
+    text-align: left;
+    min-width: 300px;
+}
+
+.friendprofile-image {
+    align-self: center;
+    margin-bottom: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.friendprofile-label {
+    align-self: center;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--label-text-color);
+}
+
+.friendprofile-button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--profile-button-bgcolor);
+    color: var(--profile-button-text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.friendprofile-button:hover {
+    background-color: var(--profile-button-bgcolor-hover);
+}

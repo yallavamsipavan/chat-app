@@ -22,6 +22,7 @@
 
 .messagechat-main h1 {
     text-align: center;
+    cursor: pointer;
     margin-bottom: 20px;
     font-size: 24px;
     color: var(--chat-friendname-text-color);
