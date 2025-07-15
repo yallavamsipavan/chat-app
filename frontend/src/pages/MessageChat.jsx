@@ -9,7 +9,7 @@ const socket = io("http://localhost:5000");
 
 const MessageChat = () => {
     const location = useLocation();
-    const { fromid, toid, touserid, toname } = location.state;
+    const { fromid, toid, touserid, toname, tobio } = location.state;
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
     const messagesEndRef = useRef(null);
@@ -70,9 +70,10 @@ const MessageChat = () => {
                             myid: fromid,
                             friendid: toid,
                             frienduserid: touserid,
-                            friendname: toname
+                            friendname: toname,
+                            friendbio: tobio
                         }
-                    })}}>{toname}</h1>
+                    })}}>{ toname }</h1>
                 </div>
                 <div className="messages">
                     {messages.length === 0 ? (

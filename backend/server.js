@@ -51,7 +51,7 @@ app.post('/api/auths/login', (req, res) => {
 });
 
 app.get('/api/users/all-users', (req, res) => {
-    db.query('SELECT id, username, userid FROM users', (err, result) => {
+    db.query('SELECT id, username, userid, bio FROM users', (err, result) => {
         if (err) return res.status(500).send(err);
         res.send(result);
     });
@@ -59,7 +59,7 @@ app.get('/api/users/all-users', (req, res) => {
 
 app.get('/api/users/:id', (req, res) => {
     const { id } = req.params;
-    db.query('SELECT id, userid, username FROM users WHERE id = ?', [id], (err, result) => {
+    db.query('SELECT id, userid, username, bio FROM users WHERE id = ?', [id], (err, result) => {
         if (err) return res.status(500).send({ message: 'Server error' });
         if (result.length === 0) return res.status(404).send({ message: 'User not found' });
         res.send(result[0]);
@@ -75,10 +75,10 @@ app.get('/api/users/search', (req, res) => {
 });
 
 app.post('/api/users/update-profile', (req, res) => {
-    const { id, username, userid } = req.body;
-    db.query('UPDATE users SET username = ?, userid = ? WHERE id = ?', [username, userid, id], (err) => {
+    const { id, username, userid, bio } = req.body;
+    db.query('UPDATE users SET username = ?, userid = ?, bio = ? WHERE id = ?', [username, userid, bio, id], (err) => {
         if (err) return res.status(500).send({ message: 'Update failed' });
-        db.query('SELECT id, userid, username FROM users WHERE id = ?', [id], (err, result) => {
+        db.query('SELECT id, userid, username, bio FROM users WHERE id = ?', [id], (err, result) => {
             if (err) return res.status(500).send({ message: 'Fetch failed' });
             if (result.length === 0) return res.status(404).send({ message: 'User not found' });
             res.send(result[0]);

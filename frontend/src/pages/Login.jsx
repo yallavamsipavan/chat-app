@@ -30,7 +30,6 @@ const Login = () => {
                 <input className="login-input" placeholder="Password" type="password" onChange={e => setPassword(e.target.value)} required />
                 <button className="login-button" type="submit">Sign In</button>
                 <p className="login-p" onClick={() => navigate('/register')}>Don't have an account? Register</p>
-                <p className="login-p" onClick={() => navigate('/forgot-password')}>Forgot Password?</p>
             </form>
             </div>
         </div>

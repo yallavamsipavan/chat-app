@@ -16,7 +16,6 @@ const ChangePassword = () => {
         if(password === prevPassword) return alert('Same as previous password');
         await axios.post(`http://localhost:5000/api/users/change-password`, { userid, password });
         alert('Password updated');
-        // navigate('/profile');
         navigate(-1);
     };
 

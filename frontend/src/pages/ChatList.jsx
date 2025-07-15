@@ -50,7 +50,8 @@ const ChatList = () => {
                                                 fromid: Number(myId),
                                                 toid: user.id,
                                                 touserid: user.userid,
-                                                toname: user.username
+                                                toname: user.username,
+                                                tobio: user.bio
                                             }
                                         })
                                     }>

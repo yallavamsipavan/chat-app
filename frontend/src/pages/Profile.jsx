@@ -21,9 +21,10 @@ const Profile = () => {
                     <FaArrowLeft size={24} color="#333" />
                 </button>
                 <img className="profile-image" src={require('../assets/defaultImage.jpg')} alt="" />
-                <label>Name : {user.username}</label>
-                <label>ID   : {user.userid}</label>
-                <button onClick={() => navigate('/edit-profile', { state: {id: user.id, prevUserid: user.userid, prevUsername: user.username} })}>Edit</button>
+                <label className="profile-label">Name : {user.username}</label>
+                <label className="profile-label">ID   : {user.userid}</label>
+                <label className="profile-label">{user.bio}</label>
+                <button onClick={() => navigate('/edit-profile', { state: {id: user.id, prevUserid: user.userid, prevUsername: user.username, prevBio: user.bio} })}>Edit</button>
                 <button onClick={() => navigate('/change-password', { state: { userid: user.userid, prevPassword: user.password } })}>Change password</button>
             </div>
         </div>
